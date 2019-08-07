@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp.osv import orm, fields
 
 
 class AccountTaxCodeTemplate(orm.Model):
@@ -27,9 +27,6 @@ class AccountTaxCodeTemplate(orm.Model):
 
     _columns = {
         'mod340': fields.boolean("Include in mod340"),
-        'surcharge_tax_id': fields.many2one(
-            'account.tax.code',
-            'Surcharge tax of'),
     }
 
 
@@ -38,34 +35,4 @@ class AccountTaxCode(orm.Model):
 
     _columns = {
         'mod340': fields.boolean("Include in mod340"),
-        'surcharge_tax_id': fields.many2one(
-            'account.tax.code',
-            'Surcharge tax of'),
-    }
-
-
-class AccountTaxTemplate(orm.Model):
-    _inherit = 'account.tax.template'
-
-    _columns = {
-        'is_340_reserve_charge': fields.boolean(
-            "Include in mod340 as reserve charge"),
-    }
-
-
-class AccountTax(orm.Model):
-    _inherit = 'account.tax'
-
-    _columns = {
-        'is_340_reserve_charge': fields.boolean(
-            "Include in mod340 as reserve charge"),
-    }
-
-
-class AccountAccounte(orm.Model):
-    _inherit = 'account.account'
-
-    _columns = {
-        'is_340_leasing_account': fields.boolean(
-            "Include in mod340 as leasing account"),
     }

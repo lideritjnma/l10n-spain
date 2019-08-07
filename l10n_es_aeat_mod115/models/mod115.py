@@ -18,24 +18,16 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api, _, exceptions
+from openerp import fields, models, api, _
 
 
 class L10nEsAeatMod115Report(models.Model):
 
     _description = 'AEAT 115 report'
-    _inherit = 'l10n.es.aeat.report.tax.mapping'
+    _inherit = 'l10n.es.aeat.report'
     _name = 'l10n.es.aeat.mod115.report'
 
-    def _get_export_conf(self):
-        try:
-            return self.env.ref(
-                'l10n_es_aeat_mod115.aeat_mod115_2017_main_export_config').id
-        except ValueError:
-            return self.env['aeat.model.export.config']
-
     number = fields.Char(default='115')
-    export_config = fields.Many2one(default=_get_export_conf)
     casilla_01 = fields.Integer(
         string='[01] Número de perceptores', readonly=True,
         states={'calculated': [('readonly', False)]},
@@ -73,7 +65,7 @@ class L10nEsAeatMod115Report(models.Model):
         relation='mod115_account_move_line03_rel',
         column1='mod115', column2='account_move_line')
     currency_id = fields.Many2one(
-        comodel_name='res.currency', string='Moneda', readonly=True,
+        comodel_name='res.currency', string='Moneda',
         related='company_id.currency_id', store=True)
     tipo_declaracion = fields.Selection(
         selection=[('I', 'Ingreso'),
@@ -112,25 +104,10 @@ class L10nEsAeatMod115Report(models.Model):
             move_lines = self.move_lines_02.ids
         elif self.env.context.get('move_lines03', False):
             move_lines = self.move_lines_03.ids
-        view_id = self.env.ref('l10n_es_aeat.view_move_line_tree')
         return {'type': 'ir.actions.act_window',
                 'name': _('Account Move Lines'),
                 'view_mode': 'tree,form',
                 'view_type': 'form',
-                'views': [(view_id.id, 'tree')],
-                'view_id': False,
                 'res_model': 'account.move.line',
                 'domain': [('id', 'in', move_lines)]
                 }
-
-    @api.multi
-    def button_confirm(self):
-        """Check records"""
-        msg = ""
-        for mod115 in self:
-            if mod115.tipo_declaracion == 'U' and\
-                    not mod115.partner_bank_id.acc_number:
-                msg = _('Select an account for making the charge')
-        if msg:
-            raise exceptions.Warning(msg)
-        return super(L10nEsAeatMod115Report, self).button_confirm()

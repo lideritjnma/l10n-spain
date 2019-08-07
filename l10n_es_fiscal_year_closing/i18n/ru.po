@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_es_fiscal_year_closing
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
@@ -10,15 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2017-05-06 03:17+0000\n"
 "PO-Revision-Date: 2017-05-11 14:11+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Russian (http://www.transifex.com/oca/OCA-l10n-spain-8-0/"
-"language/ru/)\n"
-"Language: ru\n"
+"Language-Team: Russian (http://www.transifex.com/oca/OCA-l10n-spain-8-0/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #. module: l10n_es_fiscal_year_closing
 #: code:addons/l10n_es_fiscal_year_closing/models/fiscalyear_closing.py:193
@@ -44,7 +41,7 @@ msgid "Account to close"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:382
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:383
 #, python-format
 msgid "Account type closing method is not supported"
 msgstr ""
@@ -613,13 +610,13 @@ msgid "The Closing move is required"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:436
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:437
 #, python-format
 msgid "The L&P account mappings are not properly configured: %s"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:470
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:471
 #, python-format
 msgid "The L&P move must exist before creating the closing one"
 msgstr ""
@@ -631,7 +628,7 @@ msgid "The Loss & Profit move is required"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:457
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:458
 #, python-format
 msgid "The Net L&P account mappings are not properly configured: %s"
 msgstr ""
@@ -643,19 +640,19 @@ msgid "The Opening move is required"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:501
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:502
 #, python-format
 msgid "The closing move must exist to create the opening one"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:504
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:505
 #, python-format
 msgid "The closing move shouldn't be empty"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:421
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:422
 #, python-format
 msgid "The operation must be a supported one"
 msgstr ""
@@ -692,12 +689,12 @@ msgid "Useless operations"
 msgstr ""
 
 #. module: l10n_es_fiscal_year_closing
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:381
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:435
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:456
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:469
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:500
-#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:503
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:382
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:436
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:457
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:470
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:501
+#: code:addons/l10n_es_fiscal_year_closing/wizard/wizard_run.py:504
 #, python-format
 msgid "UserError"
 msgstr ""

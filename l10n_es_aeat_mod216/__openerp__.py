@@ -18,7 +18,7 @@
 
 {
     'name': 'AEAT modelo 216',
-    'version': '8.0.1.3.1',
+    'version': '8.0.1.1.0',
     'category': "Localisation/Accounting",
     'author': "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
               "AvanzOSC,"
@@ -34,8 +34,7 @@
         'wizard/export_mod216_to_boe.xml',
         'views/mod216_view.xml',
         'views/res_partner_view.xml',
-        'security/ir.model.access.csv',
-        'security/ir_rule.xml'
+        'security/ir.model.access.csv'
     ],
     'installable': True,
 }

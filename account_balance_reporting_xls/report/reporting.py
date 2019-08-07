@@ -74,7 +74,6 @@ class AccountBalanceReportingPrint(report_sxw.rml_parse):
             lines.append(line_fields)
         return lines
 
-
 report_sxw.report_sxw(
     'report.account.balance.reporting.print', 'account.balance.reporting',
     parser=AccountBalanceReportingPrint, header=False)

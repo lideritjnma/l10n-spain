@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
-# © 2013-2015 Serv. Tecnol. Avanzados - Pedro M. Baeza
-# © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
+# -*- encoding: utf-8 -*-
+##############################################################################
+# For copyright and license notices, see __openerp__.py file in root directory
+##############################################################################
 from openerp import models, fields, api, exceptions, _
 from datetime import datetime
 
@@ -65,10 +64,10 @@ class AccountBankStatementImport(models.TransientModel):
             'concepto_c': line[22:24],
             'concepto_p': line[24:27],
             'importe': (float(line[28:40]) + (float(line[40:42]) / 100)),
-            'num_documento': line[42:52],
+            'num_documento': line[41:52],
             'referencia1': line[52:64].strip(),
             'referencia2': line[64:].strip(),
-            'conceptos': {},
+            'conceptos': '',
         }
         if line[27:28] == '1':
             st_line['importe'] *= -1
@@ -146,10 +145,7 @@ class AccountBankStatementImport(models.TransientModel):
         """88 - Registro de fin de archivo"""
         st_data['num_registros'] = int(line[20:26])
         # File level checks
-        # Some banks (like Liderbank) are informing this record number
-        # including the record 88, so checking this with the absolute
-        # difference allows to bypass the error
-        if abs(st_data['num_registros'] - st_data['_num_records']) > 1:
+        if st_data['num_registros'] != st_data['_num_records']:
             raise exceptions.Warning(
                 _("Number of records doesn't match with the defined in the "
                   "last record."))
@@ -162,7 +158,7 @@ class AccountBankStatementImport(models.TransientModel):
             'groups': [],  # Info about each of the groups (account groups)
         }
         for raw_line in data_file.split("\n"):
-            if not raw_line.strip():
+            if not raw_line:
                 continue
             code = raw_line[0:2]
             if code == '11':
@@ -190,7 +186,7 @@ class AccountBankStatementImport(models.TransientModel):
         return st_data['groups']
 
     def _check_n43(self, data_file):
-        data_file = data_file.decode('iso-8859-1')
+        data_file = data_file.decode('iso-8859-1').encode('utf-8')
         try:
             n43 = self._parse(data_file)
         except exceptions.ValidationError:
@@ -215,72 +211,45 @@ class AccountBankStatementImport(models.TransientModel):
 
     def _get_partner_from_caixabank(self, conceptos):
         partner_obj = self.env['res.partner']
-        partner = partner_obj.browse()
+        partners = []
         # Try to match from VAT included in concept complementary record #02
         if conceptos.get('02'):
             vat = conceptos['02'][0][:2] + conceptos['02'][0][7:]
             if vat:
-                partner = partner_obj.search([('vat', '=', vat)], limit=1)
-        if not partner:
+                partners = partner_obj.search([('vat', '=', vat)])
+        if not partners:
             # Try to match from partner name
             if conceptos.get('01'):
                 name = conceptos['01'][0][4:] + conceptos['01'][1]
                 if name:
-                    partner = partner_obj.search(
-                        [('name', 'ilike', name)], limit=1)
-        return partner
+                    partners = partner_obj.search([('name', 'ilike', name)])
+        return partners and partners[0].id or False
 
     def _get_partner_from_santander(self, conceptos):
         partner_obj = self.env['res.partner']
-        partner = partner_obj.browse()
+        partners = []
         # Try to match from VAT included in concept complementary record #01
         if conceptos.get('01'):
             if conceptos['01'][1]:
                 vat = conceptos['01'][1]
                 if vat:
-                    partner = partner_obj.search(
-                        [('vat', 'ilike', vat)], limit=1)
-        if not partner:
+                    partners = partner_obj.search([('vat', 'ilike', vat)])
+        if not partners:
             # Try to match from partner name
             if conceptos.get('01'):
                 name = conceptos['01'][0]
                 if name:
-                    partner = partner_obj.search(
-                        [('name', 'ilike', name)], limit=1)
-        return partner
-
-    def _get_partner_from_bankia(self, conceptos):
-        partner_obj = self.env['res.partner']
-        partner = partner_obj.browse()
-        # Try to match from partner name
-        if conceptos.get('01'):
-            vat = conceptos['01'][0][:2] + conceptos['01'][0][7:]
-            if vat:
-                partner = partner_obj.search([('vat', '=', vat)], limit=1)
-        return partner
-
-    def _get_partner_from_sabadell(self, conceptos):
-        partner_obj = self.env['res.partner']
-        partner = partner_obj.browse()
-        # Try to match from partner name
-        if conceptos.get('01'):
-            name = conceptos['01'][1]
-            if name:
-                partner = partner_obj.search(
-                    [('name', 'ilike', name)], limit=1)
-        return partner
+                    partners = partner_obj.search([('name', 'ilike', name)])
+        return partners and partners[0].id or False
 
     def _get_partner(self, line):
         if not line.get('conceptos'):
-            return self.env['res.partner']
-        partner = self._get_partner_from_caixabank(line['conceptos'])
-        if not partner:
-            partner = self._get_partner_from_santander(line['conceptos'])
-        if not partner:
-            partner = self._get_partner_from_bankia(line['conceptos'])
-        if not partner:
-            partner = self._get_partner_from_sabadell(line['conceptos'])
-        return partner
+            return False
+        partner_id = self._get_partner_from_caixabank(line['conceptos'])
+        if partner_id:
+            return partner_id
+        partner_id = self._get_partner_from_santander(line['conceptos'])
+        return partner_id
 
     def _get_account(self, line):
         accounts = []
@@ -305,40 +274,21 @@ class AccountBankStatementImport(models.TransientModel):
                                      for x in line['conceptos'][concept_line]
                                      if x.strip())
                 vals_line = {
-                    'date': fields.Date.to_string(
-                        line[self.journal_id.n43_date_type]),
+                    'date': fields.Date.to_string(line['fecha_valor']),
                     'name': ' '.join(conceptos),
                     'ref': self._get_ref(line),
                     'amount': line['importe'],
-                    'note': line,
+                    'partner_id': self._get_partner(line),
                 }
-                c = line['conceptos']
-                if c.get('01'):
-                    vals_line['partner_name'] = c['01'][0] + c['01'][1]
-                if not vals_line['name']:
-                    vals_line['name'] = vals_line['ref']
                 transactions.append(vals_line)
         vals_bank_statement = {
             'transactions': transactions,
             'balance_start': n43 and n43[0]['saldo_ini'] or 0.0,
             'balance_end_real': n43 and n43[-1]['saldo_fin'] or 0.0,
         }
-        str_currency = self.journal_id.currency and \
-            self.journal_id.currency.name or \
-            self.journal_id.company_id.currency_id.name
-        return str_currency, False, [vals_bank_statement]
+        return 'EUR', False, [vals_bank_statement]
 
     @api.model
     def _get_hide_journal_field(self):
         # Show the journal_id field if not coming from a context where is set
         return bool(self.env.context.get('journal_id'))
-
-    def _complete_statement(self, stmt_vals, journal_id, account_number):
-        """Match partner_id if if hasn't been deducted yet."""
-        res = super(AccountBankStatementImport, self)._complete_statement(
-            stmt_vals, journal_id, account_number)
-        for line_vals in res['transactions']:
-            if not line_vals['partner_id'] and line_vals.get('note'):
-                line_vals['partner_id'] = self._get_partner(
-                    line_vals['note']).id
-        return res

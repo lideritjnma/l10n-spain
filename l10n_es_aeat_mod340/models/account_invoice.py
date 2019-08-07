@@ -18,12 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import logging
 
-from openerp import api
-from openerp.osv import fields, orm
-
-_logger = logging.getLogger(__name__)
+from openerp.osv import orm, fields
 
 
 class AccountInvoice(orm.Model):
@@ -37,21 +33,3 @@ class AccountInvoice(orm.Model):
         'first_ticket': fields.char('First ticket', size=40),
         'last_ticket': fields.char('Last ticket', size=40)
     }
-
-    @api.one
-    def is_leasing_invoice(self):
-        lines = self.env['account.invoice.line'].search(
-            [('invoice_id', '=', self.id),
-                ('account_id.is_340_leasing_account', '=', True)])
-        if lines:
-            return True
-        return False
-
-    @api.one
-    def is_reverse_charge_invoice(self):
-        lines = self.env['account.invoice.line'].search(
-            [('invoice_id', '=', self.id),
-                ('invoice_line_tax_id.is_340_reserve_charge', '=', True)])
-        if lines:
-            return True
-        return False

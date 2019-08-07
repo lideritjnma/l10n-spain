@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 
 {
     'name': 'AEAT modelo 111',
-    'version': '8.0.2.1.0',
+    'version': '8.0.1.1.0',
     'category': "Localisation/Accounting",
     'author': "AvanzOSC,"
               "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
@@ -30,9 +30,8 @@
     'license': 'AGPL-3',
     'depends': ['l10n_es_aeat'],
     'data': [
-        'data/aeat_export_mod111_data.xml',
+        'wizard/export_mod111_to_boe.xml',
         'views/mod111_view.xml',
-        'security/ir.model.access.csv',
-        'security/ir_rule.xml'],
+        'security/ir.model.access.csv'],
     'installable': True,
 }
