@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_es_aeat_mod303
-# 
+#
 # Translators:
 # Alejandro Santana <alejandrosantana@anubia.es>, 2015
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
@@ -9,20 +9,110 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l10n-spain (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 22:58+0000\n"
-"PO-Revision-Date: 2016-04-30 23:00+0000\n"
+"POT-Creation-Date: 2018-01-27 01:49+0000\n"
+"PO-Revision-Date: 2017-11-23 23:27+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Galician (http://www.transifex.com/oca/OCA-l10n-spain-8-0/language/gl/)\n"
+"Language-Team: Galician (http://www.transifex.com/oca/OCA-l10n-spain-8-0/"
+"language/gl/)\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: l10n_es_aeat_mod303
 #: help:l10n.es.aeat.mod303.report,casilla_46:0
 msgid "(IVA devengado - IVA deducible)"
 msgstr "(IVE devindicado - IVE deducible)"
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_0
+msgid "0 - Sin Epígrafe"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_0
+msgid "0 - Sin epígrafe"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_1b
+msgid "1 - Epígrafes correspondientes a: Actividades AGP con IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_1
+msgid ""
+"1 - Epígrafes correspondientes a: Actividades empresariales sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_1a
+msgid ""
+"1 - Epígrafes correspondientes a: Actividades en régimen simplificado "
+"excepto las agrícolas, ganaderas y pesqueras (AGP)"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_2b
+msgid "2 - Epígrafes correspondientes a: Actividades artísticas sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_2a
+msgid ""
+"2 - Epígrafes correspondientes a: Actividades profesionales sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_3a
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_3a
+msgid "3 - Epígrafe 861.1 correspondiente a: Alquiler de viviendas"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_3b
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_3b
+msgid "3 - Epígrafe 861.2 correspondiente a: Alquiler de locales industriales"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_3c
+msgid "3 - Epígrafe 862 correspondiente a: Alquiler de inmuebles rústicos"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_4t_4
+msgid "4 - Sin epígrafe, correspondiente a: Actividades AGP, no sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_4
+msgid ""
+"4 - Sin epígrafe, correspondiente a: Actividades agrícolas, ganaderas, "
+"forestales o pesqueras, no sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: selection:l10n.es.aeat.mod303.report.activity.code,period_type:0
+msgid "4T"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_5
+msgid "5 - Sin epígrafe, correspondiente a: Sujetos pasivos sin actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: model:l10n.es.aeat.mod303.report.activity.code,name:l10n_es_aeat_mod303.aeat_mod303_activity_code_12_6
+msgid ""
+"6 - Sin epígrafe, correspondiente a: Otras actividades no sujetas al IAE"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: selection:l10n.es.aeat.mod303.report,result_type:0
+msgid "A compensar"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: selection:l10n.es.aeat.mod303.report,result_type:0
@@ -40,6 +130,12 @@ msgid "AEAT 303 Report"
 msgstr "Declaración AEAT 303"
 
 #. module: l10n_es_aeat_mod303
+#: model:ir.ui.menu,name:l10n_es_aeat_mod303.menu_aeat_mod303_report_activity_code
+#, fuzzy
+msgid "AEAT 303 activity codes"
+msgstr "Declaración AEAT 303"
+
+#. module: l10n_es_aeat_mod303
 #: model:ir.ui.menu,name:l10n_es_aeat_mod303.menu_aeat_mod303_report
 msgid "AEAT 303 model"
 msgstr "Declaración AEAT 303"
@@ -51,12 +147,28 @@ msgstr "Declaracións AEAT 303"
 
 #. module: l10n_es_aeat_mod303
 #: model:ir.actions.act_window,name:l10n_es_aeat_mod303.action_l10n_es_aeat_mod303_report
+#: model:ir.actions.act_window,name:l10n_es_aeat_mod303.action_l10n_es_aeat_mod303_report_activity_code
 msgid "AEAT model 303"
 msgstr "Modelo AEAT 303"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,move_id:0
 msgid "Account entry"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Actividad principal"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report.activity.code,code:0
+msgid "Activity code"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report.activity.code,name:0
+msgid "Activity name"
 msgstr ""
 
 #. module: l10n_es_aeat_mod303
@@ -69,10 +181,13 @@ msgstr ""
 msgid ""
 "Atribuible a la Administración [66] - Cuotas a compensar [67] + "
 "Regularización anual [68]"
-msgstr "Atribuible á Administración [66] - Cuotas a compensar [67] + Regularización anual [68]"
+msgstr ""
+"Atribuible á Administración [66] - Cuotas a compensar [67] + Regularización "
+"anual [68]"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,bank_account:0
+#: field:l10n.es.aeat.mod303.report,partner_bank_id:0
 msgid "Bank account"
 msgstr "Conta bancaria"
 
@@ -90,6 +205,11 @@ msgstr "Cancelada"
 #: field:l10n.es.aeat.mod303.report,company_id:0
 msgid "Company"
 msgstr "Compañía"
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,partner_bank_id:0
+msgid "Company bank account used for the presentation"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,compensate:0
@@ -113,11 +233,13 @@ msgstr "Crea e consulta as declaracións do modelo AEAT 303"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,create_uid:0
+#: field:l10n.es.aeat.mod303.report.activity.code,create_uid:0
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,create_date:0
+#: field:l10n.es.aeat.mod303.report.activity.code,create_date:0
 msgid "Created on"
 msgstr "Creado o"
 
@@ -126,7 +248,9 @@ msgstr "Creado o"
 msgid ""
 "Cuota a compensar de periodos anteriores, en los que su declaración fue a "
 "devolver y se escogió la opción de compensación posterior"
-msgstr "Cota a compensar de períodos anteriores, nos que a súa declaración foi a devolver e escolleuse a opción de compensación posterior"
+msgstr ""
+"Cota a compensar de períodos anteriores, nos que a súa declaración foi a "
+"devolver e escolleuse a opción de compensación posterior"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,currency_id:0
@@ -134,9 +258,49 @@ msgid "Currency"
 msgstr "Moeda"
 
 #. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_first_activity_code:0
+msgid "Código 1ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_second_activity_code:0
+msgid "Código 2ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_third_activity_code:0
+msgid "Código 3ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_fourth_activity_code:0
+msgid "Código 4ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_fifth_activity_code:0
+msgid "Código 5ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,main_activity_code:0
+msgid "Código actividad principal"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
 #: selection:l10n.es.aeat.mod303.report,support_type:0
 msgid "DVD"
 msgstr "DVD"
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Datos extra exonerados modelo 390"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: selection:l10n.es.aeat.mod303.report.activity.code,period_type:0
+msgid "December"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,number:0
@@ -150,6 +314,7 @@ msgstr "Devolución mensual"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,display_name:0
+#: field:l10n.es.aeat.mod303.report.activity.code,display_name:0
 msgid "Display Name"
 msgstr ""
 
@@ -171,7 +336,59 @@ msgid ""
 "anual conforme disponen las Leyes por las que se aprueban el Concierto "
 "Económico entre el Estado y la Comunidad Autónoma del País Vasco y el "
 "Convenio Económico entre el Estado y la Comunidad Foral de Navarra."
-msgstr "Na última autoliquidación do ano (a do período 4T ou mes 12) farase constar, co signo que corresponda, o resultado da regularización anual conforme dispoñen as Leis polas que se aproban o Concerto Económico entre o Estado e a Comunidade Autónoma do País Vasco e o Convenio Económico entre o Estado e a Comunidade Foral de Navarra."
+msgstr ""
+"Na última autoliquidación do ano (a do período 4T ou mes 12) farase constar, "
+"co signo que corresponda, o resultado da regularización anual conforme "
+"dispoñen as Leis polas que se aproban o Concerto Económico entre o Estado e "
+"a Comunidade Autónoma do País Vasco e o Convenio Económico entre o Estado e "
+"a Comunidade Foral de Navarra."
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_first_activity_iae:0
+msgid "Epígrafe I.A.E. 1ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_second_activity_iae:0
+msgid "Epígrafe I.A.E. 2ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_third_activity_iae:0
+msgid "Epígrafe I.A.E. 3ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_fourth_activity_iae:0
+msgid "Epígrafe I.A.E. 4ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,other_fifth_activity_iae:0
+msgid "Epígrafe I.A.E. 5ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,main_activity_iae:0
+msgid "Epígrafe I.A.E. actividad principal"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: selection:l10n.es.aeat.mod303.report,exonerated_390:0
+msgid "Exonerado"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,exonerated_390:0
+msgid ""
+"Exonerado de la Declaración-resumen anual del IVA, modelo 390: Volumen de "
+"operaciones (art. 121 LIVA)"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,exonerated_390:0
+msgid "Exonerado mod. 390"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,export_config:0
@@ -190,8 +407,17 @@ msgstr "Nome completo"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,id:0
+#: field:l10n.es.aeat.mod303.report.activity.code,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,casilla_88:0
+msgid ""
+"Información adicional - Operaciones realizadas en el ejercicio - Total "
+"volumen de operaciones "
+"([80]+[81]+[93]+[94]+[83]+[84]+[85]+[86]+[95]+[96]+[97]+[98]-[79]-[99])"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: help:l10n.es.aeat.mod303.report,devolucion_mensual:0
@@ -215,16 +441,19 @@ msgstr "NIF repr. legal"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,__last_update:0
+#: field:l10n.es.aeat.mod303.report.activity.code,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Modificado por última vez o"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,write_uid:0
+#: field:l10n.es.aeat.mod303.report.activity.code,write_uid:0
 msgid "Last Updated by"
 msgstr "Derradeira actualización feita por"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,write_date:0
+#: field:l10n.es.aeat.mod303.report.activity.code,write_date:0
 msgid "Last Updated on"
 msgstr "Actualizado por derradeira vez o"
 
@@ -237,11 +466,23 @@ msgstr "NIF do representante legal."
 #: help:l10n.es.aeat.mod303.report,porcentaje_atribuible_estado:0
 msgid ""
 "Los sujetos pasivos que tributen conjuntamente a la Administración del "
-"Estado y a las Diputaciones Forales del País Vasco o a la Comunidad Foral de"
-" Navarra, consignarán en esta casilla el porcentaje del volumen de "
+"Estado y a las Diputaciones Forales del País Vasco o a la Comunidad Foral de "
+"Navarra, consignarán en esta casilla el porcentaje del volumen de "
 "operaciones en territorio común. Los demás sujetos pasivos consignarán en "
 "esta casilla el 100%"
-msgstr "Os suxeitos pasivos que tributen conxuntamente á Administración do Estado e ás Diputacións Forais do País Vasco ou á Comunidade Foral de Navarra, consignarán nesta casa a porcentaxe do volumen de operacións no territorio común. Os demáis suxeitos pasivos consignarán nesta casa o 100%"
+msgstr ""
+"Os suxeitos pasivos que tributen conxuntamente á Administración do Estado e "
+"ás Diputacións Forais do País Vasco ou á Comunidade Foral de Navarra, "
+"consignarán nesta casa a porcentaxe do volumen de operacións no territorio "
+"común. Os demáis suxeitos pasivos consignarán nesta casa o 100%"
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,has_347:0
+msgid ""
+"Marque la casilla si el sujeto pasivo ha efectuado con alguna persona o "
+"entidad operaciones por las que tenga obligación de presentar la declaración "
+"anual de operaciones con terceras personas (modelo 347)."
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,model:0
@@ -254,9 +495,44 @@ msgid "Must have name and surname."
 msgstr "Debe conter nome e apelidos"
 
 #. module: l10n_es_aeat_mod303
+#: selection:l10n.es.aeat.mod303.report,exonerated_390:0
+msgid "No exonerado"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
 #: selection:l10n.es.aeat.mod303.report,type:0
 msgid "Normal"
 msgstr "Normal"
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otras - 1ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otras - 2ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otras - 3ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otras - 4ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otras - 5ª actividad"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: view:l10n.es.aeat.mod303.report:l10n_es_aeat_mod303.view_l10n_es_aeat_mod303_report_form
+msgid "Otros"
+msgstr ""
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,company_partner_id:0
@@ -265,6 +541,7 @@ msgstr "Empresa"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,period_type:0
+#: field:l10n.es.aeat.mod303.report.activity.code,period_type:0
 msgid "Period type"
 msgstr "Tipo de período"
 
@@ -313,7 +590,9 @@ msgstr "Resultado"
 msgid ""
 "Resultado de la anterior o anteriores declaraciones del mismo concepto, "
 "ejercicio y periodo"
-msgstr "Resultado da anterior ou anteriores declaracións do mesmo concepto, exercicio e período"
+msgstr ""
+"Resultado da anterior ou anteriores declaracións do mesmo concepto, "
+"exercicio e período"
 
 #. module: l10n_es_aeat_mod303
 #: help:l10n.es.aeat.mod303.report,casilla_77:0
@@ -321,18 +600,18 @@ msgid ""
 "Se hará constar el importe de las cuotas del Impuesto a la importación "
 "incluidas en los documentos en los que conste la liquidación practicada por "
 "la Administración recibidos en el periodo de liquidación. Solamente podrá "
-"cumplimentarse esta casilla cuando se cumplan los requisitos establecidos en"
-" el artículo 74.1 del Reglamento del Impuesto sobre el Valor Añadido. "
+"cumplimentarse esta casilla cuando se cumplan los requisitos establecidos en "
+"el artículo 74.1 del Reglamento del Impuesto sobre el Valor Añadido. "
 msgstr ""
 
 #. module: l10n_es_aeat_mod303
-#: code:addons/l10n_es_aeat_mod303/models/mod303.py:196
+#: code:addons/l10n_es_aeat_mod303/models/mod303.py:344
 #, python-format
 msgid "Select an account for making the charge"
 msgstr "Seleccione unha conta bancaria para realiza-lo cargo"
 
 #. module: l10n_es_aeat_mod303
-#: code:addons/l10n_es_aeat_mod303/models/mod303.py:198
+#: code:addons/l10n_es_aeat_mod303/models/mod303.py:346
 #, python-format
 msgid "Select an account for receiving the money"
 msgstr "Seleccione unha conta bancaria para recibi-lo diñeiro"
@@ -340,9 +619,11 @@ msgstr "Seleccione unha conta bancaria para recibi-lo diñeiro"
 #. module: l10n_es_aeat_mod303
 #: help:l10n.es.aeat.mod303.report,compensate:0
 msgid ""
-"Si se marca, indicará que el importe a devolver se compensará en posteriores"
-" declaraciones"
-msgstr "Se se marca, indicará que o importe a devolver compensarase en declaracións posteriores"
+"Si se marca, indicará que el importe a devolver se compensará en posteriores "
+"declaraciones"
+msgstr ""
+"Se se marca, indicará que o importe a devolver compensarase en declaracións "
+"posteriores"
 
 #. module: l10n_es_aeat_mod303
 #: selection:l10n.es.aeat.mod303.report,result_type:0
@@ -439,10 +720,42 @@ msgstr "[70] A deducir"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,resultado_liquidacion:0
-msgid "[71] Result. liquidación"
-msgstr "[71] Result. liquidación"
+msgid "[71] Liquidación"
+msgstr "[71] Liquidación"
 
 #. module: l10n_es_aeat_mod303
 #: field:l10n.es.aeat.mod303.report,casilla_77:0
 msgid "[77] Iva Diferido (Liquidado por aduana)"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,casilla_88:0
+msgid "[88] Total volumen operaciones"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,has_operation_volume:0
+msgid "¿Existe volumen de operaciones (art. 121 LIVA)?"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: help:l10n.es.aeat.mod303.report,is_voluntary_sii:0
+msgid ""
+"¿Ha llevado voluntariamente los Libros registro del IVA a través de la Sede "
+"electrónica de la AEAT durante el ejercicio?"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,has_347:0
+msgid "¿Obligación del 347?"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,is_voluntary_sii:0
+msgid "¿SII voluntario?"
+msgstr ""
+
+#. module: l10n_es_aeat_mod303
+#: field:l10n.es.aeat.mod303.report,has_operation_volume:0
+msgid "¿Volumen de operaciones?"
 msgstr ""

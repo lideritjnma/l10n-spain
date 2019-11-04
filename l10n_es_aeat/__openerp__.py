@@ -28,9 +28,9 @@
 ##############################################################################
 {
     'name': "AEAT Base",
-    'version': "8.0.1.6.0",
+    'version': "8.0.1.9.4",
     'author': "Pexego,"
-              "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
+              "Tecnativa,"
               "AvanzOSC,"
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
@@ -38,6 +38,8 @@
         'Ignacio Ibeas (Acysos S.L.)',
         'Ainara Galdona',
         'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
+        'Santi Argüeso <santi@comunitea.com>',
+        'cubells <info@obertix.net>',
     ],
     'website': "https://github.com/OCA/l10n-spain",
     'category': "Accounting & Finance",
@@ -57,7 +59,8 @@
         'views/aeat_report_view.xml',
         'views/aeat_report_tax_mapping_view.xml',
         'views/aeat_export_configuration_view.xml',
-        'views/aeat_tax_code_mapping_view.xml'
+        'views/aeat_tax_code_mapping_view.xml',
+        'views/account_move_line_view.xml',
     ],
     'installable': True,
 }

@@ -119,10 +119,14 @@ class L10nEsAeatReport(models.AbstractModel):
         help="Journal in which post the move.")
     move_id = fields.Many2one(
         comodel_name="account.move", string="Account entry")
+    partner_bank_id = fields.Many2one(
+        comodel_name='res.partner.bank', string='Bank account',
+        help='Company bank account used for the presentation',
+        domain="[('state', '=', 'iban'), ('company_id', '=', company_id)]")
 
     _sql_constraints = [
-        ('name_uniq', 'unique(name)',
-         'AEAT report identifier must be unique'),
+        ('name_uniq', 'unique(name, company_id)',
+         'AEAT report identifier must be unique by company'),
     ]
 
     @api.one
@@ -160,9 +164,10 @@ class L10nEsAeatReport(models.AbstractModel):
                 # Anual
                 if fy_date_start.year != fy_date_stop.year:
                     return {
-                        'warning': _(
+                        'warning': {'title': _('Warning'), 'message': _(
                             'Split fiscal years cannot be automatically '
                             'handled. You should select manually the periods.')
+                        }
                     }
                 self.periods = self.fiscalyear_id.period_ids.filtered(
                     lambda x: not x.special)
@@ -200,11 +205,12 @@ class L10nEsAeatReport(models.AbstractModel):
                 period_date_stop = fields.Date.from_string(period.date_stop)
                 if period_date_start.month != period_date_stop.month:
                     return {
-                        'warning': _(
+                        'warning': {'title': _('Warning'), 'message': _(
                             'It seems that you have defined quarterly periods '
                             'or periods in the middle of the month. This '
                             'cannot be automatically handled. You should '
                             'select manually the periods.')
+                            }
                     }
                 self.periods = period
 
@@ -276,10 +282,11 @@ class L10nEsAeatReport(models.AbstractModel):
     @api.multi
     def _prepare_move_vals(self):
         self.ensure_one()
+        last = self.periods.sorted(lambda x: x.date_stop)[-1:]
         return {
-            'date': fields.Date.today(),
             'journal_id': self.journal_id.id,
-            'period_id': self.env['account.period'].find().id,
+            'date': last.date_stop,
+            'period_id': last.id,
             'ref': self.name,
             'company_id': self.company_id.id,
         }

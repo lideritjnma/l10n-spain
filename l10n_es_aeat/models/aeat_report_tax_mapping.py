@@ -20,6 +20,7 @@ class L10nEsAeatReportTaxMapping(models.AbstractModel):
     @api.multi
     def calculate(self):
         res = super(L10nEsAeatReportTaxMapping, self).calculate()
+        tax_line_obj = self.env['l10n.es.aeat.tax.line']
         for report in self:
             report.tax_lines.unlink()
             # Buscar configuración de mapeo de impuestos
@@ -40,7 +41,17 @@ class L10nEsAeatReportTaxMapping(models.AbstractModel):
                 tax_lines = []
                 for map_line in tax_code_map.map_lines:
                     tax_lines.append(report._prepare_tax_line_vals(map_line))
-                report.tax_lines = [(0, 0, x) for x in tax_lines]
+                # Due to a bug in ORM that unlinks other tables' records, we
+                # have to avoid (0, 0, x) syntax
+                # Reference: https://github.com/odoo/odoo/issues/18438
+                for tax_line_vals in tax_lines:
+                    tax_line_vals.update({
+                        'model': report._name,
+                        'res_id': report.id,
+                    })
+                    tax_line_obj.create(tax_line_vals)
+                report.modified(['tax_lines'])
+                report.recompute()
         return res
 
     @api.multi
@@ -51,7 +62,9 @@ class L10nEsAeatReportTaxMapping(models.AbstractModel):
     @api.multi
     def _prepare_tax_line_vals(self, map_line):
         self.ensure_one()
-        move_lines = self._get_tax_code_lines(
+        move_lines = self.with_context(
+            field_number=map_line.field_number,
+        )._get_tax_code_lines(
             map_line.mapped('tax_codes.code'), periods=self.periods)
         return {
             'model': self._name,
@@ -86,7 +99,7 @@ class L10nEsAeatReportTaxMapping(models.AbstractModel):
         move_line_domain += self._get_partner_domain()
         return move_line_domain
 
-    @api.model
+    @api.multi
     def _get_tax_code_lines(self, codes, periods=None, include_children=True):
         """
         Get the move lines for the codes and periods associated
@@ -196,11 +209,10 @@ class L10nEsAeatTaxLine(models.Model):
         for s in self:
             s.model_id = self.env["ir.model"].search([("model", "=", s.model)])
 
-    def _get_move_line_act_window_dict(self):
-        return self.env.ref('account.action_tax_code_line_open').read()[0]
-
     @api.multi
     def get_calculated_move_lines(self):
-        res = self._get_move_line_act_window_dict()
+        res = self.env.ref('account.action_tax_code_line_open').read()[0]
+        view = self.env.ref('l10n_es_aeat.view_move_line_tree')
+        res['views'] = [(view.id, 'tree')]
         res['domain'] = [('id', 'in', self.move_lines.ids)]
         return res
