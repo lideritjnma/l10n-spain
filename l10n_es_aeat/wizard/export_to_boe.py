@@ -119,16 +119,14 @@ class L10nEsAeatReportExportToBoe(models.TransientModel):
         # Sanity-check
         assert len(ascii_string) == (include_sign and 1 or 0) + int_length + \
             dec_length, _("The formated string must match the given length")
-        # Return the string assuring that is not unicode
-        return str(ascii_string)
+        # Return the string
+        return ascii_string
 
     def _formatBoolean(self, value, yes='X', no=' '):
-        """Formats a boolean value into a fixed length ASCII (iso-8859-1)
-        record.
         """
-        res = value and yes or no
-        # Return the string assuring that is not unicode
-        return str(res)
+        Formats a boolean value into a fixed length ASCII (iso-8859-1) record.
+        """
+        return value and yes or no
 
     @api.multi
     def _get_formatted_declaration_record(self, report):

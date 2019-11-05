@@ -77,7 +77,6 @@ class L10nEsAeatMod347Report(models.Model):
 
         Create from income (from supplier) invoices
         """
-        vals = vals.copy()
         partner_record_obj = self.env['l10n.es.aeat.mod347.partner_record']
         record = False
         vals['operation_key'] = 'A'
@@ -97,7 +96,6 @@ class L10nEsAeatMod347Report(models.Model):
 
         Create from outcome (from customer) invoices and cash movements
         """
-        vals = vals.copy()
         partner_record_obj = self.env['l10n.es.aeat.mod347.partner_record']
         cash_record_obj = self.env['l10n.es.aeat.mod347.cash_record']
         records = []
@@ -422,9 +420,9 @@ class L10nEsAeatMod347PartnerRecord(models.Model):
 
         def _invoices_sum(invoices, refunds, quarter):
             return (
-                sum(x.invoice_id.amount_total_wo_irpf for x in invoices
+                sum(x.amount for x in invoices
                     if x.invoice_id.period_id.quarter == quarter) -
-                sum(x.invoice_id.amount_total_wo_irpf for x in refunds
+                sum(x.amount for x in refunds
                     if x.invoice_id.period_id.quarter == quarter))
 
         for record in self:
@@ -817,7 +815,7 @@ class L10nEsAeatMod347InvoiceRecord(models.Model):
         related='invoice_id.date_invoice', store=True, readonly=True,
         string='Date')
     amount = fields.Float(
-        related="invoice_id.amount_total_wo_irpf", readonly=True,
+        related="invoice_id.amount_total_wo_irpf", store=True, readonly=True,
         digits=dp.get_precision('Account'), string='Amount')
 
 

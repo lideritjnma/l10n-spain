@@ -2,14 +2,11 @@
 # © 2013-2016 Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3).
 
-import logging
 from openerp import models, fields, api, _
 from openerp import tools
 from ..gen_src.gen_data_banks import gen_bank_data_xml
 import tempfile
 import os
-
-_logger = logging.getLogger(__name__)
 
 
 class L10nEsPartnerImportWizard(models.TransientModel):
@@ -36,7 +33,8 @@ class L10nEsPartnerImportWizard(models.TransientModel):
             response = requests.get(
                 'http://www.bde.es/f/webbde/IFI/servicio/regis/ficheros/es/'
                 'REGBANESP_CONESTAB_A.XLS')
-            response.raise_for_status()
+            if not response.ok:
+                raise Exception()
             src_file.write(response.content)
             src_file.close()
             # Generate XML and reopen it
@@ -44,8 +42,7 @@ class L10nEsPartnerImportWizard(models.TransientModel):
             tools.convert_xml_import(
                 self._cr, 'l10n_es_partner', dest_file.name, {}, 'init',
                 noupdate=True)
-        except requests.exceptions.HTTPError:
-            _logger.exception()
+        except:
             self.import_fail = True
             return {
                 'name': _('Import spanish bank data'),

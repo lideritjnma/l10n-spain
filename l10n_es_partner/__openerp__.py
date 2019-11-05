@@ -7,7 +7,7 @@
 
 {
     "name": "Adaptación de los clientes, proveedores y bancos para España",
-    "version": "8.0.1.6.0",
+    "version": "8.0.1.5.1",
     "author": "ZikZak,"
               "Acysos,"
               "Tecnativa,"
@@ -18,7 +18,6 @@
     "external_dependencies": {
         'python': [
             'requests',
-            'xlrd',
         ],
     },
     "depends": [
@@ -28,7 +27,6 @@
         "l10n_es_toponyms",
     ],
     "data": [
-        "data/l10n_es_partner_data.xml",
         "views/l10n_es_partner_view.xml",
         "wizard/l10n_es_partner_wizard.xml",
     ],

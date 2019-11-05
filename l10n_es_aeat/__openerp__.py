@@ -28,9 +28,9 @@
 ##############################################################################
 {
     'name': "AEAT Base",
-    'version': "8.0.1.9.4",
+    'version': "8.0.1.9.0",
     'author': "Pexego,"
-              "Tecnativa,"
+              "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
               "AvanzOSC,"
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",

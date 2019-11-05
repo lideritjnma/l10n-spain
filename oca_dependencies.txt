@@ -8,4 +8,3 @@ pos
 bank-payment
 account-payment
 community-data-files
-connector

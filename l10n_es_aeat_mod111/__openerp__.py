@@ -18,7 +18,7 @@
 
 {
     'name': 'AEAT modelo 111',
-    'version': '8.0.2.1.0',
+    'version': '8.0.2.0.0',
     'category': "Localisation/Accounting",
     'author': "AvanzOSC,"
               "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
@@ -32,7 +32,6 @@
     'data': [
         'data/aeat_export_mod111_data.xml',
         'views/mod111_view.xml',
-        'security/ir.model.access.csv',
-        'security/ir_rule.xml'],
+        'security/ir.model.access.csv'],
     'installable': True,
 }

@@ -1,22 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_es_partner
-#
+# 
 # Translators:
 # Eric Antones <eantones@users.noreply.github.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: l10n-spain (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-19 10:40+0000\n"
-"PO-Revision-Date: 2017-01-13 09:22+0000\n"
+"POT-Creation-Date: 2016-08-27 18:55+0000\n"
+"PO-Revision-Date: 2016-09-09 12:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Catalan (http://www.transifex.com/oca/OCA-l10n-spain-8-0/"
-"language/ca/)\n"
-"Language: ca\n"
+"Language-Team: Catalan (http://www.transifex.com/oca/OCA-l10n-spain-8-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
+"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: l10n_es_partner
@@ -30,7 +29,7 @@ msgid "Bank Accounts"
 msgstr "Comptes bancaris"
 
 #. module: l10n_es_partner
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:83
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:100
 #, python-format
 msgid "Bank account should have 20 digits."
 msgstr "Bank account should have 20 digits."
@@ -58,10 +57,10 @@ msgstr "Creat el"
 #. module: l10n_es_partner
 #: field:l10n.es.partner.import.wizard,display_name:0
 msgid "Display Name"
-msgstr "Veure el nom"
+msgstr ""
 
 #. module: l10n_es_partner
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:117
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:134
 #, python-format
 msgid "IBAN account is not valid"
 msgstr "El compte IBAN no és vàlid"
@@ -94,11 +93,16 @@ msgid "Import from local file"
 msgstr ""
 
 #. module: l10n_es_partner
-#: code:addons/l10n_es_partner/wizard/l10n_es_partner_wizard.py:51
+#: code:addons/l10n_es_partner/wizard/l10n_es_partner_wizard.py:48
 #: model:ir.actions.act_window,name:l10n_es_partner.action_l10n_es_partner_import
 #: view:l10n.es.partner.import.wizard:l10n_es_partner.l10n_es_partner_import_wizard
 #, python-format
 msgid "Import spanish bank data"
+msgstr ""
+
+#. module: l10n_es_partner
+#: view:l10n.es.partner.import.wizard:l10n_es_partner.l10n_es_partner_import_wizard
+msgid "Install Modules"
 msgstr ""
 
 #. module: l10n_es_partner
@@ -109,7 +113,7 @@ msgid ""
 msgstr ""
 
 #. module: l10n_es_partner
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:91
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:108
 #, python-format
 msgid "Invalid bank account."
 msgstr "Invalid bank account."
@@ -117,7 +121,7 @@ msgstr "Invalid bank account."
 #. module: l10n_es_partner
 #: field:l10n.es.partner.import.wizard,__last_update:0
 msgid "Last Modified on"
-msgstr "Darrera modificació el"
+msgstr ""
 
 #. module: l10n_es_partner
 #: field:l10n.es.partner.import.wizard,write_uid:0
@@ -180,9 +184,9 @@ msgid "Value Added Tax number"
 msgstr "Codi d'Indentificació Fiscal"
 
 #. module: l10n_es_partner
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:82
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:90
-#: code:addons/l10n_es_partner/models/l10n_es_partner.py:116
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:99
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:107
+#: code:addons/l10n_es_partner/models/l10n_es_partner.py:133
 #, python-format
 msgid "Warning"
 msgstr "Warning"
